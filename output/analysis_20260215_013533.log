@@ -1,0 +1,80 @@
+2026-02-15 01:35:33,042 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,042 - __main__ - INFO - CREDIT ANALYTICS PLATFORM - Analysis Starting
+2026-02-15 01:35:33,042 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,042 - __main__ - INFO - Ticker: INTC | Mode: dummy | Output: /Users/anmol/Projects/cds_basis/output
+2026-02-15 01:35:33,042 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:33,042 - __main__ - INFO - STEP 1: Data Acquisition
+2026-02-15 01:35:33,042 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,042 - data_provider - INFO - Fetching market snapshot for INTC in dummy mode
+2026-02-15 01:35:33,042 - __main__ - INFO - ✓ Market data acquired successfully
+2026-02-15 01:35:33,042 - __main__ - INFO -   - Bond: INTC 5.200% 02/10/2033
+2026-02-15 01:35:33,042 - __main__ - INFO -   - Price: $94.50
+2026-02-15 01:35:33,042 - __main__ - INFO -   - CDS Tenors: [1.0, 3.0, 5.0, 7.0, 10.0]
+2026-02-15 01:35:33,042 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:33,042 - __main__ - INFO - STEP 2: Hazard Rate Bootstrapping
+2026-02-15 01:35:33,042 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,042 - hazard_rate - INFO - Initializing HazardRateEngine with 5 CDS tenors and 40.0% recovery rate
+2026-02-15 01:35:33,042 - hazard_rate - INFO - Bootstrapping 5 tenors: [1.0, 3.0, 5.0, 7.0, 10.0]
+2026-02-15 01:35:33,045 - hazard_rate - INFO - Bootstrapping completed successfully
+2026-02-15 01:35:33,045 - __main__ - INFO - ✓ Hazard rates bootstrapped
+2026-02-15 01:35:33,045 - __main__ - INFO -   - 1.0Y: λ=0.013333, S(t)=98.68%
+2026-02-15 01:35:33,045 - __main__ - INFO -   - 3.0Y: λ=0.021016, S(t)=94.61%
+2026-02-15 01:35:33,045 - __main__ - INFO -   - 5.0Y: λ=0.032122, S(t)=88.73%
+2026-02-15 01:35:33,045 - __main__ - INFO -   - 7.0Y: λ=0.037311, S(t)=82.35%
+2026-02-15 01:35:33,045 - __main__ - INFO -   - 10.0Y: λ=0.041320, S(t)=72.75%
+2026-02-15 01:35:33,045 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:33,045 - __main__ - INFO - STEP 3: Synthetic Bond Pricing
+2026-02-15 01:35:33,045 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,045 - pricing - INFO - Initialized SyntheticPricer for INTC 5.200% 02/10/2033 with 7.0Y maturity
+2026-02-15 01:35:33,045 - pricing - INFO - Synthetic price calculated: 89.3048
+2026-02-15 01:35:33,045 - __main__ - INFO - ✓ Pricing completed
+2026-02-15 01:35:33,046 - __main__ - INFO -   - Market Price:    $94.5000
+2026-02-15 01:35:33,046 - __main__ - INFO -   - Synthetic Price: $89.3048
+2026-02-15 01:35:33,046 - __main__ - INFO -   - Difference:      +5.1952 points
+2026-02-15 01:35:33,046 - __main__ - INFO -   - Signal:          Bond is RICH (Sell)
+2026-02-15 01:35:33,046 - __main__ - INFO -   - Modified Duration: 5.69
+2026-02-15 01:35:33,046 - __main__ - INFO -   - DV01: $0.0538
+2026-02-15 01:35:33,046 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:33,046 - __main__ - INFO - STEP 4: CDS-Bond Basis Analysis
+2026-02-15 01:35:33,046 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,046 - basis_analysis - INFO - Initialized BasisAnalyzer
+2026-02-15 01:35:33,047 - basis_analysis - INFO - Z-spread calculated: 172.59 bps
+2026-02-15 01:35:33,047 - pricing - INFO - Synthetic price calculated: 89.3048
+2026-02-15 01:35:33,048 - basis_analysis - INFO - Basis analysis complete: -12.59 bps (Negative Basis → Long Bond/Buy CDS (Moderate))
+2026-02-15 01:35:33,048 - __main__ - INFO - ✓ Basis analysis completed
+2026-02-15 01:35:33,048 - __main__ - INFO -   - Z-Spread:   172.59 bps
+2026-02-15 01:35:33,048 - __main__ - INFO -   - CDS Spread: 160.0 bps (7.0Y)
+2026-02-15 01:35:33,048 - __main__ - INFO -   - Basis:      -12.59 bps
+2026-02-15 01:35:33,049 - __main__ - INFO -   - Signal:     Negative Basis → Long Bond/Buy CDS (Moderate)
+2026-02-15 01:35:33,049 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:33,049 - __main__ - INFO - STEP 5: Generating Visualizations
+2026-02-15 01:35:33,049 - __main__ - INFO - ============================================================
+2026-02-15 01:35:33,049 - visualizations - INFO - Visualizer initialized with output dir: /Users/anmol/Projects/cds_basis/output
+2026-02-15 01:35:33,794 - visualizations - INFO - Saved credit curve plot to /Users/anmol/Projects/cds_basis/output/credit_curve.png
+2026-02-15 01:35:33,794 - __main__ - INFO -   ✓ Credit curve plot saved
+2026-02-15 01:35:34,012 - visualizations - INFO - Saved basis analysis plot to /Users/anmol/Projects/cds_basis/output/basis_analysis.png
+2026-02-15 01:35:34,013 - __main__ - INFO -   ✓ Basis analysis plot saved
+2026-02-15 01:35:34,303 - visualizations - INFO - Saved cash flow waterfall to /Users/anmol/Projects/cds_basis/output/cash_flow_waterfall.png
+2026-02-15 01:35:34,303 - __main__ - INFO -   ✓ Cash flow waterfall saved
+2026-02-15 01:35:34,533 - visualizations - INFO - Saved survival curve to /Users/anmol/Projects/cds_basis/output/survival_curve.png
+2026-02-15 01:35:34,533 - __main__ - INFO -   ✓ Survival curve saved
+2026-02-15 01:35:34,962 - visualizations - INFO - Saved comprehensive dashboard to /Users/anmol/Projects/cds_basis/output/comprehensive_dashboard.png
+2026-02-15 01:35:34,962 - __main__ - INFO -   ✓ Comprehensive dashboard saved
+2026-02-15 01:35:34,962 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:34,962 - __main__ - INFO - STEP 6: Generating Report
+2026-02-15 01:35:34,962 - __main__ - INFO - ============================================================
+2026-02-15 01:35:34,963 - basis_analysis - INFO - Z-spread calculated: 172.59 bps
+2026-02-15 01:35:34,963 - pricing - INFO - Synthetic price calculated: 89.3048
+2026-02-15 01:35:34,964 - basis_analysis - INFO - Basis analysis complete: -12.59 bps (Negative Basis → Long Bond/Buy CDS (Moderate))
+2026-02-15 01:35:34,967 - __main__ - INFO - ✓ Report saved to /Users/anmol/Projects/cds_basis/output/INTC_basis_report.csv
+2026-02-15 01:35:34,967 - __main__ - INFO - 
+============================================================
+2026-02-15 01:35:34,967 - __main__ - INFO - ANALYSIS COMPLETED SUCCESSFULLY
+2026-02-15 01:35:34,967 - __main__ - INFO - ============================================================
+2026-02-15 01:35:34,967 - __main__ - INFO - All outputs saved to: /Users/anmol/Projects/cds_basis/output

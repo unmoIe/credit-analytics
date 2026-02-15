@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Logs
+*.log
+logs/
+
+# Output files
+output/
+*.png
+*.pdf
+*.csv
+*.xlsx
+
+# Cache
+.cache/
+*.cache
+
+# Environment variables
+.env
+.env.local
+
+# Documentation builds
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files (uncomment if you don't want to track data)
+# data/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# My configurations
+config/local.yaml
+config/*.secret

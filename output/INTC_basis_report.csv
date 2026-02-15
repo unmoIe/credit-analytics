@@ -1,0 +1,9 @@
+Category,Metric,Value,Unit
+Market Data,Bond Price,$94.50,USD
+Market Data,7.0Y CDS Spread,160.0,bps
+Credit Spreads,Z-Spread,172.59,bps
+Credit Spreads,Asset Swap Spread,182.61,bps
+Basis Analysis,CDS-Bond Basis,-12.59,bps
+Basis Analysis,Synthetic Price,$89.30,USD
+Basis Analysis,Price Difference,5.20,points
+Trading,Signal,Negative Basis → Long Bond/Buy CDS (Moderate),
