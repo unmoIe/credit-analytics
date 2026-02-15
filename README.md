@@ -365,9 +365,5 @@ Always perform independent verification and consult with licensed financial prof
 For questions, issues, or contributions:
 
 - **GitHub Issues**: [github.com/yourusername/credit-analytics/issues](https://github.com/yourusername/credit-analytics/issues)
-- **Email**: team@creditanalytics.com
-- **Documentation**: [docs.creditanalytics.com](https://docs.creditanalytics.com)
 
 ---
-
-**Built with ❤️ by the Credit Analytics Team**
